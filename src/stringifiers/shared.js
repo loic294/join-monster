@@ -102,8 +102,8 @@ export function interpretForOffsetPaging(node, dialect) {
     if (node.paginate) {
       limit++
     }
-    if (node.args.after) {
-      offset = cursorToOffset(node.args.after) + 1
+    if (node.args.offset) {
+      offset = node.args.offset
     }
   }
   return { limit, offset, order }
